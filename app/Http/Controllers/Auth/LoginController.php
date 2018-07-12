@@ -22,10 +22,10 @@ class LoginController extends Controller
 
     /**
      * Where to redirect users after login.
-     *
+     *Redicciona a la pagina de inicio de las notas
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/index';
 
     /**
      * Create a new controller instance.
