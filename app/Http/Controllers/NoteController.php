@@ -7,13 +7,23 @@ use Illuminate\Http\Request;
 class NoteController extends Controller
 {
     /**
+     * Constructor
+     * sirve para filtrar e acceso si no estas 
+     * con la sesion activa.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        return view('notes.index');
     }
 
     /**
