@@ -35,7 +35,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        return view('notes.create');
     }
 
     /**
@@ -46,7 +46,11 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $note = new Note();
+        $note->note=$request->input('note');
+        $note->user_id=$request->input('user_id');
+        $note->save();
+        return "Guardado";
     }
 
     /**
