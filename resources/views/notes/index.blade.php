@@ -21,6 +21,7 @@
                             <i>Creada: {{$noutes->created_at}} </i>
                             <br>
                             <i>Actualizada: {{$noutes->updated_at}}</i>
+                            <a href="/index/{{ $noutes->id }}" class="btn btn-primary">Ver</a>
                     </ul>
                     @endforeach
                 </div>
