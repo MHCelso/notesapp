@@ -19,6 +19,7 @@
                     <ul>
                         <li>{{ $noutes->note }}</li>
                             <i>Creada: {{$noutes->created_at}} </i>
+                            <br>
                             <i>Actualizada: {{$noutes->updated_at}}</i>
                     </ul>
                     @endforeach
