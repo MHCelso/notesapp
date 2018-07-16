@@ -18,7 +18,7 @@
                             <br>
                             <i><b>Actualizada:</b> {{$note->updated_at}}</i>
                     </ul>
-                    <a href="/index/{{ $note->id }}/#" class="btn btn-primary">Editar</a>
+                    <a href="/index/{{ $note->id }}/edit" class="btn btn-primary">Editar</a>
                 </div>
             </div>
         </div>
