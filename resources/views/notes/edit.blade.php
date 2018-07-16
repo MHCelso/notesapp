@@ -12,12 +12,5 @@
         </div>
         <button type="submit" class="btn btn-primary my-1">modificar</button>
     </form>
-
-    <form action="/index/{{$note->id}}" method="POST">
-            @csrf
-            @method('DELETE')
-            <button class="btn btn-danger" type="submit">Delete</button>
-    </form>
-
 </div>
 @endsection

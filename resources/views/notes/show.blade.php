@@ -6,6 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"><b>Nota</b></div>
+                <ins><a href="{{ url('/index') }}" class="nav-link">ver mis notas</a></ins>
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -18,7 +19,12 @@
                             <br>
                             <i><b>Actualizada:</b> {{$note->updated_at}}</i>
                     </ul>
-                    <a href="/index/{{ $note->id }}/edit" class="btn btn-primary">Editar</a>
+                    <form action="/index/{{$note->id}}" method="POST">
+                        <a href="/index/{{ $note->id }}/edit" class="btn btn-primary">Editar</a>
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger" type="submit">Borrar</button>
+                    </form>
                 </div>
             </div>
         </div>
