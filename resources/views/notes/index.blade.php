@@ -7,21 +7,17 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Notas</div>
-                <a href="{{ url('/index/create') }}" class="nav-link">Crea una nueva nota</a>
+                <ins><a href="{{ url('/index/create') }}" class="nav-link">Crea una nueva nota</a></ins>
                 <div class="card-body">
                     @if (session('status'))
                     <div class="alert alert-success" role="alert">
                         {{ session('status') }}
                     </div>
                     @endif
-                    Tus Notas
+                    <b>Tus Notas</b>
                     @foreach($notes as $noutes)
                     <ul>
-                        <li>{{ $noutes->note }}</li>
-                            <i>Creada: {{$noutes->created_at}} </i>
-                            <br>
-                            <i>Actualizada: {{$noutes->updated_at}}</i>
-                            <a href="/index/{{ $noutes->id }}" class="btn btn-primary">Ver</a>
+                        <li><a href="/index/{{ $noutes->id }}" class="nav-link">{{ $noutes->note }}</a></li>                        
                     </ul>
                     @endforeach
                 </div>
@@ -41,7 +37,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    No tienes Notas
+                    <b>No tienes Notas</b>
                     <br><br>
                     <a href="{{ url('/index/create') }}" class="nav-link">Crea una nueva</a>
                 </div>
