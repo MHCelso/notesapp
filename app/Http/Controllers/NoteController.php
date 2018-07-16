@@ -50,7 +50,7 @@ class NoteController extends Controller
         $note->note=$request->input('note');
         $note->user_id=$request->input('user_id');
         $note->save();
-        return redirect()->route('index.index');
+        return redirect()->route('index.index')->with('status', '¡ tu nota fue creada !');
     }
 
     /**
@@ -90,7 +90,7 @@ class NoteController extends Controller
         $note->user_id = $request->input('user_id');
         $note->note = $request->input('note');
         $note->save();
-        return redirect()->route('index.show', [$note]);
+        return redirect()->route('index.show', [$note])->with('status', '¡ tu nota fue actualizada !');
     }
 
     /**
@@ -103,6 +103,6 @@ class NoteController extends Controller
     {
         $note=Note::find($id);
         $note->delete();
-        return redirect()->route('index.index');
+        return redirect()->route('index.index')->with('status', '! tu nota fue eliminada !');
     }
 }
