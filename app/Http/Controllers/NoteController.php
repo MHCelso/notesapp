@@ -3,6 +3,8 @@
 namespace Notes\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Notes\Note;
 
 class NoteController extends Controller
@@ -24,7 +26,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Note::all();
+        $id = Auth::id();
+        $notes = DB::select('CALL getNotesByUserId('.$id.')');
         return view('notes.index', compact('notes')); 
     }
 
