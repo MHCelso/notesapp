@@ -69,8 +69,8 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/index') }}">Notes</a>
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/index') }}">Tus Notas</a>
+                        {{-- <a href="{{ url('/home') }}">Home</a> --}}
                     @else
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
@@ -79,7 +79,7 @@
             @endif
             <div class="content">
                 <div class="title m-b-md">
-                    Notes
+                    Notas
                 </div>
             </div>
         </div>

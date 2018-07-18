@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Notas</div>
+                <div class="card-header"><b>Notas</b></div>
                 <ins><a href="{{ url('/index/create') }}" class="nav-link">Crea una nueva nota</a></ins>
                 <div class="card-body">
                     @if (session('status'))
@@ -30,7 +30,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Notas</div>
+                <div class="card-header"><b>Notas</b></div>
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
