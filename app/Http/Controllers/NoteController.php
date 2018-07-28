@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Notes\Note;
+use Notes\Http\Requests\StoreNoteRequest;
 
 class NoteController extends Controller
 {
@@ -47,13 +48,8 @@ class NoteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreNoteRequest $request)
     {
-        $validateData = $request->validate([
-            'note' => 'required',
-            'user_id' => 'required',
-        ]);
-
         $note = new Note();
         $note->note=$request->input('note');
         $note->user_id=$request->input('user_id');
@@ -92,14 +88,8 @@ class NoteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreNoteRequest $request, $id)
     {
-
-        $validateData = $request->validate([
-            'note' => 'required',
-            'user_id' => 'required',
-        ]);
-
         $note = Note::find($id);
         $note->note = $request->input('note');
         $note->user_id = $request->input('user_id');
