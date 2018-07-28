@@ -49,6 +49,11 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
+        $validateData = $request->validate([
+            'note' => 'required',
+            'user_id' => 'required',
+        ]);
+
         $note = new Note();
         $note->note=$request->input('note');
         $note->user_id=$request->input('user_id');
@@ -89,9 +94,15 @@ class NoteController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $validateData = $request->validate([
+            'note' => 'required',
+            'user_id' => 'required',
+        ]);
+
         $note = Note::find($id);
-        $note->user_id = $request->input('user_id');
         $note->note = $request->input('note');
+        $note->user_id = $request->input('user_id');
         $note->save();
         return redirect()->route('index.show', [$note])->with('status', '¡ tu nota fue actualizada !');
     }

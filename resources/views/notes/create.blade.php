@@ -11,5 +11,10 @@
         </div>
         <button type="submit" class="btn btn-primary my-1">Crear nota</button>
     </form>
+    @if ( $errors->any() )
+        @foreach($errors->all() as $error)
+            <i>{{ $error }}</i>
+        @endforeach
+    @endif
 </div>
 @endsection
